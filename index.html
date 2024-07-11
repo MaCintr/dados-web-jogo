@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yahtzee</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Play Yahtzee!</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>SEÇÃO SUPERIOR</th>
+          <th>COMO PONTUAR</th>
+          <th>JOGO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span>Um</span>
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-one.png"
+              alt="dice-one"
+            />
+            = 1
+          </td>
+          <td>
+            Conte apenas
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-one.png"
+              alt="dice-one"
+            />
+          </td>
+          <td class="colocar-resultado" id="td-um"></td>
+        </tr>
+        <tr>
+          <td>
+            <span>Dois</span>
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-two.png"
+              alt="dice-two"
+            />
+            = 2
+          </td>
+          <td>
+            Conte apenas
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-two.png"
+              alt="dice-one"
+            />
+          </td>
+          <td class="colocar-resultado" id="td-dois"></td>
+        </tr>
+        <tr>
+          <td>
+            <span>Três</span>
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-three.png"
+              alt="dice-two"
+            />
+            = 3
+          </td>
+          <td>
+            Conte apenas
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-three.png"
+              alt="dice-one"
+            />
+          </td>
+          <td class="colocar-resultado" id="td-tres"></td>
+        </tr>
+        <tr>
+          <td>
+            <span>Quatro</span>
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-four.png"
+              alt="dice-two"
+            />
+            = 4
+          </td>
+          <td>
+            Conte apenas
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-four.png"
+              alt="dice-one"
+            />
+          </td>
+          <td class="colocar-resultado" id="td-quatro"></td>
+        </tr>
+        <tr>
+          <td>
+            <span>Cinco</span>
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-five.png"
+              alt="dice-two"
+            />
+            = 5
+          </td>
+          <td>
+            Conte apenas
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-five.png"
+              alt="dice-one"
+            />
+          </td>
+          <td class="colocar-resultado" id="td-cinco"></td>
+        </tr>
+        <tr>
+          <td>
+            <span>Seis</span>
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-six.png"
+              alt="dice-two"
+            />
+            = 6
+          </td>
+          <td>
+            Conte apenas
+            <img
+              width="22"
+              height="22"
+              src="https://img.icons8.com/windows/64/dice-six.png"
+              alt="dice-one"
+            />
+          </td>
+          <td class="colocar-resultado" id="td-seis"></td>
+        </tr>
+        <tr>
+          <td>PONTUAÇÃO TOTAL</td>
+          <td>-----></td>
+          <td id="td-total-cima"></td>
+        </tr>
+        <tr>
+          <td>BÔNUS</td>
+          <td>TOTAL >= 63 | +35</td>
+          <td id="td-bonus-bool"></td>
+        </tr>
+        <tr>
+          <td>TOTAL + BÔNUS</td>
+          <td>-----></td>
+          <td id="td-bonus-soma"></td>
+        </tr>
+        <div class="secao-inferior">
+          <tr>
+            <th>SEÇÃO INFERIOR</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr style="height: 46px">
+            <td>Trinca</td>
+            <td>Some todos<br />os dados</td>
+            <td class="colocar-resultado" id="td-trinca"></td>
+          </tr>
+          <tr style="height: 46px">
+            <td>Quadra</td>
+            <td>Some todos<br />os dados</td>
+            <td class="colocar-resultado" id="td-quadra"></td>
+          </tr>
+          <tr style="height: 46px">
+            <td>Full House</td>
+            <td>25 Pontos</td>
+            <td class="colocar-resultado" id="td-fullhouse"></td>
+          </tr>
+          <tr style="height: 46px">
+            <td>Sequência Mínima</td>
+            <td>30 Pontos</td>
+            <td class="colocar-resultado" id="td-seq-min"></td>
+          </tr>
+          <tr style="height: 46px">
+            <td>Sequência Máxima</td>
+            <td>40 Pontos</td>
+            <td class="colocar-resultado" id="td-seq-max"></td>
+          </tr>
+          <tr style="height: 46px">
+            <td>Chance</td>
+            <td>Some todos<br />os dados</td>
+            <td class="colocar-resultado" id="td-chance"></td>
+          </tr>
+          <tr style="height: 46px">
+            <td>YAHTZEE!</td>
+            <td>50 Pontos</td>
+            <td class="colocar-resultado" id="td-yahtzee"></td>
+          </tr>
+          <tr>
+            <th>RESULTADO</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>TOTAL SUPERIOR</td>
+            <td>-----></td>
+            <td id="td-bonus-soma"></td>
+          </tr>
+          <tr>
+            <td>TOTAL INFERIOR</td>
+            <td>-----></td>
+            <td id="td-soma-inferior"></td>
+          </tr>
+          <tr>
+            <td>TOTAL DO JOGO</td>
+            <td>-----></td>
+            <td id="td-resultado-final"></td>
+          </tr>
+        </div>
+      </tbody>
+    </table>
+    <div class="jogo">
+      <div class="dados">
+        <!-- <a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Mike Zuidgeest - Flaticon</a>-->
+        <img class="dado-jogo" id="dice-1" src="./images/dado-1.png" alt="dice">
+        <img class="dado-jogo" id="dice-2" src="./images/dado-2.png" alt="dice">
+        <img class="dado-jogo" id="dice-3" src="./images/dado-3.png" alt="dice">
+        <img class="dado-jogo" id="dice-4" src="./images/dado-4.png" alt="dice">
+        <img class="dado-jogo" id="dice-5" src="./images/dado-5.png" alt="dice">
+      </div>
+      <button id="btn-rolar-dados">Rolar Dados <span id="rolagens-restantes">(3)</span></button>
+    </div>
+    <script src="rolarDados.js"></script>
+  </body>
+</html>
